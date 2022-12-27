@@ -1,0 +1,27 @@
+roles => admin, x, y
+
+user/add    post      admin, x
+
+
+isLogin
+user has role route
+
+get user/:userId
+
+user/a
+user/123
+user/6t55
+
+req.params
+
+{
+    userId:  a
+}
+
+object.keys => ["userId"]
+objects.values => ["a"]
+
+objects.values.forEach( d, i
+    url has value => 
+    replace vale => :object.keys[i]
+)
