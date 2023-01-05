@@ -1,0 +1,605 @@
+{
+	"info": {
+		"_postman_id": "2b6c2829-8075-4848-951c-d9544f0d74e5",
+		"name": "laViaProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23797935"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n \r\n{\r\n   \"fName\":\"zozozo\",\r\n   \"lName\":\"khaled\",\r\n   \"email\":\"zozo@ko.com\",\r\n   \"password\":\"4578963215\",\r\n   \"roleId\":\"63b57514b501b20e0f1dcabf\",\r\n   \"shopId\":\"63b574e5b501b20e0f1dcabd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}user/register",
+							"host": [
+								"{{dburl}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n \r\n{\r\n   \"fName\":\"zozozo\",\r\n   \"lName\":\"khaled\",\r\n   \"email\":\"555555@ko.com\",\r\n   \"password\":\"457894563215\",\r\n   \"roleId\":\"63b57514b501b20e0f1dcabf\",\r\n   \"shopId\":\"63b574e5b501b20e0f1dcabd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}user/login",
+							"host": [
+								"{{dburl}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I1Nzg0ZmIzMzhjNWQzNmRjZjA4MzgiLCJ1c2VyVHlwZSI6InByb2ZmZXRpbmFsdHJlZSIsInR5cGVzaG9wIjoidHJlZXMiLCJpYXQiOjE2NzI4Mzc2Njl9.P8Cq4-Hc8hnko73qB4fSzjL36CrmurlcSTgO8VgkpBo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}user/profile/63b5784fb338c5d36dcf0838",
+							"host": [
+								"{{dburl}}user"
+							],
+							"path": [
+								"profile",
+								"63b5784fb338c5d36dcf0838"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllUsers",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}user/deleteAllUsers",
+							"host": [
+								"{{dburl}}user"
+							],
+							"path": [
+								"deleteAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I1Njk0OWEzODgwNjQ4MzJhNjZkY2YiLCJ1c2VyVHlwZSI6InByb2ZldGluYWwiLCJpYXQiOjE2NzI4MzM5NjV9.M_YciPStrXX2awJac_uH3T0yO4bGS-exncXPG9z7CL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}user/allUser",
+							"host": [
+								"{{dburl}}user"
+							],
+							"path": [
+								"allUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "qualifications",
+			"item": [
+				{
+					"name": "addqualification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userType\": \"proffetinaltree\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}quailfication/addQuaification",
+							"host": [
+								"{{dburl}}quailfication"
+							],
+							"path": [
+								"addQuaification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allquailfications",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}quailfication/allQuaification",
+							"host": [
+								"{{dburl}}quailfication"
+							],
+							"path": [
+								"allQuaification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteallquailfications",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}quailfication/deleteAll",
+							"host": [
+								"{{dburl}}quailfication"
+							],
+							"path": [
+								"deleteAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletequalification",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}quailfication/deletequalification",
+							"host": [
+								"{{dburl}}quailfication"
+							],
+							"path": [
+								"deletequalification"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shops",
+			"item": [
+				{
+					"name": "addShop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " \r\n {\r\n \"nameShop\":\"myflowers\",\r\n \"phoneNumshop\":\"01012548262\",\r\n \"typeshop\":\"flowersShopoe\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}shop/addShop",
+							"host": [
+								"{{dburl}}shop"
+							],
+							"path": [
+								"addShop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allShops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}shop/allShops",
+							"host": [
+								"{{dburl}}shop"
+							],
+							"path": [
+								"allShops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllShops",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}shop/deleteAll",
+							"host": [
+								"{{dburl}}shop"
+							],
+							"path": [
+								"deleteAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteShop",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}shop/deleteShop",
+							"host": [
+								"{{dburl}}shop"
+							],
+							"path": [
+								"deleteShop"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "plantsRecommadation",
+			"item": [
+				{
+					"name": "addPlant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"namePlant\":\"flow4errs\",\r\n \"plantId\":\"63b6c745daa6d0144ea86426\",\r\n \"shopId\":\"63b6be9f3c07e625b330b646\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}plant/addPlant",
+							"host": [
+								"{{dburl}}plant"
+							],
+							"path": [
+								"addPlant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allPlants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}plant/allPlants",
+							"host": [
+								"{{dburl}}plant"
+							],
+							"path": [
+								"allPlants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAll",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}plant/deleteAll",
+							"host": [
+								"{{dburl}}plant"
+							],
+							"path": [
+								"deleteAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePlant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}plant/deletePlant",
+							"host": [
+								"{{dburl}}plant"
+							],
+							"path": [
+								"deletePlant"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PlantsType",
+			"item": [
+				{
+					"name": "plantsType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"namePlant\":\"flowenceey\",\r\n \"plantPrice\":\"2000.EG\",\r\n \"typeplant\":\"redFlowers\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}plantsType/plantsType",
+							"host": [
+								"{{dburl}}plantsType"
+							],
+							"path": [
+								"plantsType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allPlantsType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}plantsType/allPlantsTypes",
+							"host": [
+								"{{dburl}}plantsType"
+							],
+							"path": [
+								"allPlantsTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllPlantsType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}plantsType/deleteAll",
+							"host": [
+								"{{dburl}}plantsType"
+							],
+							"path": [
+								"deleteAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePlantsType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}plantsType/deletePlantType",
+							"host": [
+								"{{dburl}}plantsType"
+							],
+							"path": [
+								"deletePlantType"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchases",
+			"item": [
+				{
+					"name": "Add Purchases",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":\"63b5784fb338c5d36dcf0838\",\r\n    \"shop\":\"63b6bc41f7c249a9d40ccb4c\",\r\n    \"planet\":\"63b6cd7871e02a0c9487fc4d\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dburl}}purchases/add",
+							"host": [
+								"{{dburl}}purchases"
+							],
+							"path": [
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}purchases/all",
+							"host": [
+								"{{dburl}}purchases"
+							],
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User's Purchases",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Shop's Purchases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dburl}}purchases/shop/63b6bc41f7c249a9d40ccb4c",
+							"host": [
+								"{{dburl}}purchases"
+							],
+							"path": [
+								"shop",
+								"63b6bc41f7c249a9d40ccb4c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "dburl",
+			"value": "http://localhost:5000/api/",
+			"type": "string"
+		}
+	]
+}

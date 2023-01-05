@@ -1,13 +1,13 @@
-const userRole = require("../../db/models/role.model")
-const myHelper = require("../../app/helper")
+const userRole = require("../../db/models/quiafication.model")
+const myHelper = require("../helper")
 
 class Role{
-    static addRole = async(req,res) => {
+    static addquaifcation = async(req,res) => {
         try{
             const addrole = new userRole(req.body)
             
             await addrole.save()
-            myHelper.resHandler(res, 200, true, addrole, " User role added successfully")
+            myHelper.resHandler(res, 200, true, addrole, " User quaification added successfully")
         }
         catch(e){
             myHelper.resHandler(res, 500, false, e, e.message)
@@ -26,7 +26,7 @@ class Role{
     //         myHelper.resHandler(res, 500, false, e, e.message)
     //     }
     // }
-    static allRoles = async(req,res) => {
+    static allquaifcation = async(req,res) => {
         try{
             const allroles = await userRole.find()
           
@@ -48,7 +48,7 @@ class Role{
         }
     }
 
-    static deleteme=async(req,res)=>{// to delete this user
+    static deletequalification=async(req,res)=>{// to delete this user
 
         try{
             const user = await userRole.deleteOne({user:req.params.id})

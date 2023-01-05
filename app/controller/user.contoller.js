@@ -39,20 +39,21 @@ class User {
 
   static userProfile = async (req, res) => {
     try {
-      const userData = await userModel.find({ _id: req.params.id }).populate("roleId");
-
+      const userData = await userModel.findOne({ _id: req.params.id });
+     
       myHelper.resHandler(
         res,
         200,
         true,
-        userData,
+        {userData},
         "user profile successfully"
       );
     } catch (e) {
       myHelper.resHandler(res, 500, false, e, e.message);
     }
   };
-
+  
+    
 
   static deleteprofile=async(req,res)=>{
 
@@ -88,7 +89,16 @@ class User {
       }
   }
 
-
+  static deleteAll = async(req,res) => {
+    try{
+        const allroles = await userModel.deleteMany()
+                           
+        myHelper.resHandler(res, 200, true, allroles, " All Users is deleted....")
+    }
+    catch(e){
+        myHelper.resHandler(res, 500, false, e, e.message)
+    }
+}
   static editme=async(req,res)=>{
     try{
       
@@ -102,5 +112,6 @@ class User {
 
     }
 }
+
 }
 module.exports = User;

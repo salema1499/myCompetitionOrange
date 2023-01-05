@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const roleSchema = mongoose.Schema(
+const quizSchema = mongoose.Schema(
   {
-    userType: {
+    quizType: {
       type: String,
       required: true,
     },
@@ -26,7 +26,7 @@ const roleSchema = mongoose.Schema(
 //   return userData;
 // };
 
-// roleSchema.methods.generateToken = async function () {
+// quizSchema.methods.generateToken = async function () {
 //   const userRole = this;
 //   console.log("test ", process.env.tokenPass);
 //   const token = jwt.sign({ _id: userRole._id }, process.env.tokenPass);
@@ -36,5 +36,5 @@ const roleSchema = mongoose.Schema(
 //   return token;
 // };
 
-const Role = mongoose.model("Role", roleSchema);
-module.exports = Role;
+const quiz = mongoose.model("quiz", quizSchema);
+module.exports = quiz;

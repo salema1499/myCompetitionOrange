@@ -64,10 +64,6 @@ const userSchema = mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"Role",
      },
-    // urlId:{
-    //     type:mongoose.Schema.Types.ObjectId,
-    //     ref:"URL",
-    //  },
      tokens:[{
         token:{ type:String, required: true}
 }]
@@ -94,23 +90,15 @@ userSchema.methods.toJSON = function(){
     return data
 }
 userSchema.methods.generateToken = async function(){
-    const userData = await this.populate("roleId");
+    const userData = await this.populate("roleId")
+    const userData2 = await this.populate("shopId")
     console.log("Data : ", userData);
-    const token = jwt.sign({_id: userData._id , userType: userData.roleId.userType }, process.env.tokenPass)
-    userData.tokens = userData.tokens.concat({token})
+    const token = jwt.sign({_id: userData._id , userType: userData.roleId.userType,_id:userData2._id, typeshop:userData2.shopId.typeshop}, process.env.tokenPass)
+        userData.tokens = userData.tokens.concat({token})
     // userData.tokens.push({token})
     await userData.save()
+
     return token
 }
 const User = mongoose.model("User", userSchema)
-module.exports=User
-// module.exports = mongoose.model("User", userSchema)
-
-
-//token admin
-
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E5Y2YzMDc0ZjUyMTU1YTc0YjhlMzYiLCJpYXQiOjE2NzIwNzMwMjJ9.8nhvHOzOeWNAw78MfSAHfv3qnsv2zcErhVWCGJ6wps0
-
-
-
-//token 
+module.exports=User;
